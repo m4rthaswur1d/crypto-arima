@@ -13,7 +13,7 @@ Using daily Bitcoin (BTC) and Ethereum (ETH) data, the analysis demonstrates a k
 ## Data
 
 - Daily BTC-USD and ETH-USD prices (Yahoo Finance)
-- Sample period: 2018 – January 2025
+- Sample period: January 1st, 2018 – January 15th, 2025
 - Log returns computed from adjusted close prices
 
 ## Methodology
