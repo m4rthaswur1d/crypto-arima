@@ -10,15 +10,11 @@ This project investigates the short-horizon predictability of cryptocurrency mar
 Using daily Bitcoin (BTC) and Ethereum (ETH) data, the analysis demonstrates a key empirical result commonly observed in financial markets:  
 **mean returns are difficult to predict, while volatility exhibits persistent, structured behavior.**
 
----
-
 ## Data
 
 - Daily BTC-USD and ETH-USD prices (Yahoo Finance)
 - Sample period: 2018 – January 2025
 - Log returns computed from adjusted close prices
-
----
 
 ## Methodology
 
@@ -33,8 +29,6 @@ Log returns are modeled using low-order **ARIMA(p,0,q)** specifications.
 
 **Result:**  
 Despite careful model selection and validation, ARIMA models show limited out-of-sample predictive power for daily returns, consistent with weak-form market efficiency.
-
----
 
 ### 2. Volatility Regime Analysis
 
@@ -53,16 +47,12 @@ Despite careful model selection and validation, ARIMA models show limited out-of
 **Result:**  
 Volatility exhibits strong regime persistence for both BTC and ETH, with high-volatility states remaining stable approximately **90–95%** of the time on a day-to-day basis.
 
----
-
 ## Key Findings
 
 - **Returns:** Minimal linear autocorrelation and weak forecastability
 - **Volatility:** Clear clustering and regime persistence
 - **BTC vs ETH:** ETH displays consistently higher realized volatility and fatter tails
 - **Risk Insight:** Volatility regimes provide more actionable structure than mean return forecasts
-
----
 
 ## Takeaway
 
