@@ -14,7 +14,7 @@ class VolRegimeConfig:
     q_low: float = 0.33
     q_high: float = 0.67
 
-
+# computes rolling realized volatility from return series
 def realized_volatility(
     r: pd.Series,
     window: int = 30,
@@ -31,7 +31,8 @@ def realized_volatility(
     rv.name = f"realized_vol_{window}"
     return rv
 
-
+# assigns each date to low, mid, or high vol & computes lower and upper
+# volatility thresholds from quantiles
 def label_vol_regimes_quantiles(
     vol: pd.Series,
     q_low: float = 0.33,
@@ -56,7 +57,8 @@ def label_vol_regimes_quantiles(
 
     return out
 
-
+# creates DataFrame that houses returns, volatility proxies, realized volatility,
+# and volatility regime label
 def build_regime_frame(
     r: pd.Series,
     cfg: VolRegimeConfig = VolRegimeConfig(),
@@ -80,7 +82,7 @@ def build_regime_frame(
 
     return df
 
-
+# statistics by volatility regime
 def regime_summary(df: pd.DataFrame) -> pd.DataFrame:
     required = {"ret", "abs_ret", "ret2", "realized_vol", "vol_regime"}
     missing = required - set(df.columns)
@@ -100,14 +102,12 @@ def regime_summary(df: pd.DataFrame) -> pd.DataFrame:
         }
     )
 
-    # Add a simple drawdown proxy on cumulative returns within each regime segment is complex;
-    # keep it simple: show tail risk via quantiles of returns.
     out["Ret_q05"] = g["ret"].quantile(0.05)
     out["Ret_q95"] = g["ret"].quantile(0.95)
 
     return out.sort_index()
 
-
+# creates one-step transition matrix between volatility regimes
 def regime_transition_matrix(regime: pd.Series, normalize: bool = True) -> pd.DataFrame:
     if not isinstance(regime, pd.Series):
         raise TypeError("regime must be a pd.Series")
@@ -123,7 +123,7 @@ def regime_transition_matrix(regime: pd.Series, normalize: bool = True) -> pd.Da
 
     return mat
 
-
+# identifies contiguous periods where the volatility regime stays the same.
 def regime_spans(df: pd.DataFrame) -> pd.DataFrame:
     if "vol_regime" not in df.columns:
         raise ValueError("df must contain 'vol_regime'")
