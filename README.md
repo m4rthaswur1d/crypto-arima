@@ -1,4 +1,4 @@
-# Crypto Market Dynamics: Return Predictability vs Volatility Regimes
+# Crypto Market Dynamics Research Project: Return Predictability vs Volatility Regimes
 
 ## Overview
 
