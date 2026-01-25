@@ -20,7 +20,7 @@ Using daily Bitcoin (BTC) and Ethereum (ETH) data, the analysis demonstrates a k
 
 ### 1. Return Predictability (ARIMA)
 
-Log returns are modeled using low-order **ARIMA(p,0,q)** specifications. ARIMA models were used as a baseline time-series approach to test whether short-horizon linear structure in past returns provides any predictive power, given their widespread use as a benchmark in financial return forecasting.
+Log returns are modeled using low-order **ARIMA(p,0,q)** specifications. ARIMA models were used as a baseline time-series approach to test whether short-horizon linear structure in past returns provides any predictive power, given their widespread use as a benchmark in financial return forecasting. Log returns are used instead of simple returns due to their time-additivity and more stable statistical properties, which make them well-suited for time-series modeling and volatility analysis.
 
 **Candidate models are selected using:**
 - AIC: Akaike Information Criterion, evaluates model fit while applying a moderate penalty for additional parameters, making it useful for comparing models with an emphasis on predictive performance.
