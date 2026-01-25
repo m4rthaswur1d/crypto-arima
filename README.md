@@ -44,6 +44,7 @@ Despite careful model selection and validation, ARIMA models show limited out-of
 - Regime persistence (stability of volatility states over time)
 - Transition matrices (empirical probabilities of moving between regimes)
 - Average regime duration (typical length of each volatility state)
+- Pearson correlation coefficient (linear dependence between BTC and ETH realized volatility levels on shared dates)
 
 **Result:**  
 Volatility exhibits strong regime persistence for both BTC and ETH, with high-volatility states remaining stable approximately **90–95%** of the time on a day-to-day basis.
