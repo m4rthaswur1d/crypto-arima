@@ -20,15 +20,13 @@ Using daily Bitcoin (BTC) and Ethereum (ETH) data, the analysis demonstrates a k
 
 ### 1. Return Predictability (ARIMA)
 
-Log returns are modeled using low-order **ARIMA(p,0,q)** specifications.
+Log returns are modeled using low-order **ARIMA(p,0,q)** specifications. ARIMA models were used as a baseline time-series approach to test whether short-horizon linear structure in past returns provides any predictive power, given their widespread use as a benchmark in financial return forecasting.
 
 **Candidate models are selected using:**
 - AIC: Akaike Information Criterion, evaluates model fit while applying a moderate penalty for additional parameters, making it useful for comparing models with an emphasis on predictive performance.
-- $ \mathrm{AIC} = -2 \log(L) + 2k $, where L = maximized likelihood, k = number of estimated parameters, and n = number of observations
 - BIC: Bayesian Information Criterion, applies a stronger penalty for model complexity, favoring more parsimonious models and providing a complementary perspective for model selection and robustness checks.
-- $ \mathrm{BIC} = -2 \log(L) + k \log(n) $, where L = maximized likelihood, k = number of estimated parameters, and n = number of observations
-- Ljung–Box residual diagnostics
-- Rolling 1-step-ahead forecasts evaluated using MAE and RMSE
+- Ljung–Box residual diagnostics, used to confirm that fitted ARIMA models adequately remove linear autocorrelation from the return series.
+- Rolling 1-step-ahead forecasts evaluated using Mean Absolute Error (MAE), which measures average absolute forecast deviations, and Root Mean Squared Error (RMSE), which penalizes larger forecast errors more heavily.
 
 **Result:**  
 Despite careful model selection and validation, ARIMA models show limited out-of-sample predictive power for daily returns, consistent with weak-form market efficiency.
@@ -43,9 +41,9 @@ Despite careful model selection and validation, ARIMA models show limited out-of
 
 **Regime characteristics analyzed via:**
 - Return distributions
-- Regime persistence
-- Transition matrices
-- Average regime duration
+- Regime persistence (stability of volatility states over time)
+- Transition matrices (empirical probabilities of moving between regimes)
+- Average regime duration (typical length of each volatility state)
 
 **Result:**  
 Volatility exhibits strong regime persistence for both BTC and ETH, with high-volatility states remaining stable approximately **90–95%** of the time on a day-to-day basis.
@@ -61,3 +59,7 @@ Volatility exhibits strong regime persistence for both BTC and ETH, with high-vo
 
 While short-horizon return prediction remains challenging in crypto markets, volatility dynamics exhibit stable and interpretable structure.  
 This suggests that **risk modeling and regime awareness may be more informative than return forecasting alone**, particularly for portfolio construction and risk management applications.
+
+## Next Steps
+
+The observed persistence and structure in volatility regimes motivates several natural extensions focused on risk modeling rather than mean return prediction. Potential next steps include explicit volatility forecasting using GARCH-type models, regime-conditional analysis of return distributions and tail risk, and multivariate extensions examining volatility spillovers between BTC and ETH. These directions may be particularly relevant for portfolio construction and risk management in crypto markets.
