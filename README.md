@@ -1,8 +1,8 @@
-# Crypto Market Dynamics Research Project: Return Predictability vs Volatility Regimes
+# Crypto Market Dynamics: Return Predictability vs Volatility Regimes
 
 ## Overview
 
-This project investigates the short-horizon predictability of cryptocurrency markets through two complementary lenses:
+This research project investigates the short-horizon predictability of cryptocurrency markets through two complementary lenses:
 
 1. **Mean return forecasting using ARIMA models**
 2. **Volatility structure and regime behavior using realized volatility and regime classification**
