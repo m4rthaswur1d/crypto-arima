@@ -24,13 +24,9 @@ Log returns are modeled using low-order **ARIMA(p,0,q)** specifications.
 
 **Candidate models are selected using:**
 - AIC: Akaike Information Criterion, evaluates model fit while applying a moderate penalty for additional parameters, making it useful for comparing models with an emphasis on predictive performance.
-- \[
-\mathrm{AIC} = -2 \log(L) + 2k
-\]
+- $ \mathrm{AIC} = -2 \log(L) + 2k $, where L = maximized likelihood, k = number of estimated parameters, and n = number of observations
 - BIC: Bayesian Information Criterion, applies a stronger penalty for model complexity, favoring more parsimonious models and providing a complementary perspective for model selection and robustness checks.
-- \[
-\mathrm{BIC} = -2 \log(L) + k \log(n)
-\]
+- $ \mathrm{BIC} = -2 \log(L) + k \log(n) $, where L = maximized likelihood, k = number of estimated parameters, and n = number of observations
 - Ljung–Box residual diagnostics
 - Rolling 1-step-ahead forecasts evaluated using MAE and RMSE
 
