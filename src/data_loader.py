@@ -8,8 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# ensures data from Yahoo Finance is in a Series not DataFrame, error I had when first writing the program was that
-# fetch_yahoo returned a one dimensional DataFrame when actually a Series must be passed
+# ensures data from Yahoo Finance is in a Series not DataFrame
 def _close_as_series(close_obj: pd.Series | pd.DataFrame, ticker: str) -> pd.Series:
     if isinstance(close_obj, pd.Series):
         return close_obj
