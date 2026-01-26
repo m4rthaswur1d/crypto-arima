@@ -59,7 +59,7 @@ Volatility exhibits strong regime persistence for both BTC and ETH, with high-vo
 ## Takeaway
 
 While short-horizon return prediction remains challenging in crypto markets, volatility dynamics exhibit stable and interpretable structure.  
-This suggests that **risk modeling and regime awareness may be more informative than return forecasting alone**, particularly for portfolio construction and risk management applications.
+This suggests that risk modeling and regime awareness may be more informative than return forecasting alone, particularly for portfolio construction and risk management applications.
 
 ## Next Steps
 
